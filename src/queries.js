@@ -17,6 +17,7 @@ export const GET_ALL_COMPANIES = gql`
 export const GET_SEARCH_RESULTS = gql`
   query keywordSearch ($keyword: String!) {
     keywordSearch(keyword: $keyword) {
+      id
       companyName
       description
       hiringLink

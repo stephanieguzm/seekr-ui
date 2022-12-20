@@ -15,16 +15,15 @@ export const GET_ALL_COMPANIES = gql`
 `;
 
 export const GET_SEARCH_RESULTS = gql`
-  query searchMultiple ($description: String!, $locationsHiringIn: String!) {
-    search(
-        description: "$description",
-        locationsHiringIn: "$locationsHiringIn"
-    ) {
-        id
-        companyName
-        description
-        locationsHiringIn
-        rolesHiringFor
+  query keywordSearch ($keyword: String!) {
+    keywordSearch(keyword: $keyword) {
+      companyName
+      description
+      hiringLink
+      rolesHiringFor
+      locationsHiringIn
+      oneNiceThing
+      comments
     }
   }
 `;

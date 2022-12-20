@@ -8,7 +8,6 @@ const Dashboard = () => {
     <div className='dashboard-container'>
       <h3>this is the dashboard</h3>
       <SearchForm />
-      <SearchResults/>
       <AllResults />
     </div>
   )

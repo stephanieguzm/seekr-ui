@@ -1,10 +1,9 @@
 import Result from '../Result/Result'
 
-const SearchResults = () => {
+const SearchResults = ({ data }) => {
   return (
     <div className='search-results-container'>
-      <h3>this holds the search results</h3>
-      <Result />
+      <h3>{data.companyName}</h3>
       <Result />
     </div>
   )

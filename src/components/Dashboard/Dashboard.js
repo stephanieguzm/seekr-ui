@@ -1,6 +1,7 @@
 import AllResults from '../AllResults/AllResults'
 import SearchForm from '../SearchForm/SearchForm'
 import SearchResults from '../SearchResults/SearchResults'
+import { useQuery, gql } from '@apollo/client'
 
 const Dashboard = () => {
   return (

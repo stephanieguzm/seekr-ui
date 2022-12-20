@@ -1,4 +1,5 @@
 import Result from '../Result/Result'
+import { useQuery, gql } from '@apollo/client'
 
 const AllResults = () => {
   return (

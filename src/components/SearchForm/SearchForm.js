@@ -1,3 +1,5 @@
+import { useQuery, gql } from '@apollo/client'
+
 const SearchForm = () => {
   return (
     <div className='search-form-container'>

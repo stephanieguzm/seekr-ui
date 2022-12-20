@@ -1,4 +1,5 @@
-import Dashboard from '../Dashboard/Dashboard';
+import Dashboard from '../Dashboard/Dashboard'
+import { useQuery, gql } from '@apollo/client'
 import './App.css'
 
 const App = () => {

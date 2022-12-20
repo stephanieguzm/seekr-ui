@@ -25,7 +25,7 @@ const App = () => {
         />
       </Switch>
       <footer className='footer-container' data-cy='footer-container'>
-        <p className='footer-text' data-cy='footer-text'>Made by <a href='https://github.com/stephanieguzm/seekr-ui'>Stephanie Guzman</a></p>
+        <p className='footer-text' data-cy='footer-text'>Made by <a href='https://github.com/stephanieguzm/seekr-ui' target='_blank'>Stephanie Guzman</a></p>
       </footer>
     </div>
   );

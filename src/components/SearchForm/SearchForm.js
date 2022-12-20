@@ -1,6 +1,7 @@
 import { useLazyQuery, gql } from '@apollo/client'
 import { useState } from 'react'
 import { GET_SEARCH_RESULTS } from '../../queries'
+import SearchResults from '../SearchResults/SearchResults'
 
 const SearchForm = () => {
   const [ searchInput, setSearchInput ] = useState('')
@@ -8,18 +9,19 @@ const SearchForm = () => {
   const [ getSearchResults, {loading, data, error, refetch }] = useLazyQuery(GET_SEARCH_RESULTS)
 
   const handleSearch = (event) => {
-    // getSearchResults({
-    //   variables: { title: searchInput.toUpperCase()}
-    // })
     event.preventDefault()
-    console.log('I made it in!')
+    if (!searchInput) {
+      return <p className='empty-search-message' data-cy='empty-search-message'>Please enter in a search term</p>
+    } else {
+      getSearchResults({
+        variables: { keyword: searchInput}
+      })
+    }
+    setSearchInput('')
   }
 
   if (loading) return <p className="loading-message">Loading...</p>
-  // if (error || !data) return <p className='error-message'>Oops! No results match your search terms. Try your search again.</p>
-  if (data) {
-    console.log(data)
-  }
+  if (error) return <p className='error-message'>Oops! No results match your search terms. Try your search again.</p>
 
   return (
     <div className='search-form-container'>
@@ -37,6 +39,9 @@ const SearchForm = () => {
           data-cy='search-form-button' 
           onClick={(event) => handleSearch(event)}>SUBMIT</button>
       </form>
+      {data && (
+        <SearchResults data={data} />
+      )}
     </div>
   )
 }

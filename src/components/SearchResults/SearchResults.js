@@ -1,4 +1,5 @@
 import Result from '../Result/Result'
+import './SearchResults.css'
 
 const SearchResults = ({ data }) => {
   const companies = data.keywordSearch
@@ -19,7 +20,6 @@ const SearchResults = ({ data }) => {
 
   return (
     <div className='search-results-container'>
-      <h3>These are your search results!</h3>
       {companyListings}
     </div>
   )

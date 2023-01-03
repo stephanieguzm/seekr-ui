@@ -15,8 +15,7 @@ const SearchResults = ({ data }) => {
       id={company.id}
       key={company.id}
     />
-  }
-  )
+  })
 
   return (
     <div className='search-results-container'>

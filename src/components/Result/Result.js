@@ -1,13 +1,27 @@
+import ExpandedResult from '../ExpandedResult/ExpandedResult'
+import { useState } from 'react'
 import './Result.css'
 
-const Result = ({ companyName, description, hiringLink, locationsHiringIn, oneNiceThing, rolesHiringFor, id }) => {
+const Result = ({ company, id }) => {
+
+  const [ selectedCompany, setCompany ] = useState({})
+
+  const expandResult = () => {
+    setCompany({...company})
+  }
+
   return (
-    <div className='result-card' id={id}>
-      <h3 className='company-name' data-cy='company-name'>{companyName}</h3>
-      <p>Seeking: </p>
-      <h4>{rolesHiringFor}</h4>z
-      <p>Location(s): {locationsHiringIn}</p>
-      <button>Learn More</button>
+    <div className='result-card' id={company.id}>
+      <h3 className='company-name' data-cy='company-name'>{company.companyName}</h3>
+      <div className='details'>
+        <p>Seeking: {company.rolesHiringFor}</p>
+        <p>Location(s): {company.locationsHiringIn}</p>
+        <button onClick={expandResult}>Learn More</button>
+        {selectedCompany && <ExpandedResult 
+        selectedCompany={selectedCompany}
+        key={id}
+    />}
+      </div>
     </div>
   )
 }

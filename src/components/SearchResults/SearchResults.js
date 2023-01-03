@@ -6,12 +6,7 @@ const SearchResults = ({ data }) => {
 
   const companyListings = companies.map(company => {
     return <Result
-      companyName={company.companyName}
-      description={company.description}
-      hiringLink={company.hiringLink}
-      locationsHiringIn={company.locationsHiringIn}
-      oneNiceThing={company.oneNiceThing}
-      rolesHiringFor={company.rolesHiringFor}a
+      company={company}
       id={company.id}
       key={company.id}
     />

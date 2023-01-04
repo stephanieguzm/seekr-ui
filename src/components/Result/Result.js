@@ -1,13 +1,9 @@
-import ExpandedResult from '../ExpandedResult/ExpandedResult'
-import { useState } from 'react'
 import './Result.css'
 
-const Result = ({ company, id }) => {
-
-  const [ selectedCompany, setCompany ] = useState({})
+const Result = ({ company, setSelectedCompany }) => {
 
   const expandResult = () => {
-    setCompany({...company})
+    setSelectedCompany({...company})
   }
 
   return (
@@ -16,11 +12,7 @@ const Result = ({ company, id }) => {
       <div className='details'>
         <p>Seeking: {company.rolesHiringFor}</p>
         <p>Location(s): {company.locationsHiringIn}</p>
-        <button onClick={expandResult}>Learn More</button>
-        {selectedCompany && <ExpandedResult 
-        selectedCompany={selectedCompany}
-        key={id}
-    />}
+        <button onClick={() => expandResult()}>Learn More</button>
       </div>
     </div>
   )

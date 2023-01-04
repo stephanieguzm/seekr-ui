@@ -1,6 +1,18 @@
 .search-results-container {
   padding: 15px;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 2fr);
   grid-gap: 20px;
+  width: 50%
+}
+
+.all-results-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
 }

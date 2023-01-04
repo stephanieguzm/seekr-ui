@@ -1,4 +1,4 @@
-import { useLazyQuery, gql } from '@apollo/client'
+import { useLazyQuery } from '@apollo/client'
 import { useState } from 'react'
 import { GET_SEARCH_RESULTS } from '../../queries'
 import SearchResults from '../SearchResults/SearchResults'

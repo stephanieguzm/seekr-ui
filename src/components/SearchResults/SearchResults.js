@@ -18,8 +18,10 @@ const SearchResults = ({ data }) => {
   })
 
   return (
-    <div className='search-results-container'>
+    <div className='all-results-container'>
+      <div className='search-results-container'>
       {companyListings}
+      </div>
       {selectedCompany && <ExpandedResult 
         selectedCompany={selectedCompany}
         key={selectedCompany.id}

@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const SearchResults = ({ data }) => {
 
-  const [ selectedCompany, setSelectedCompany ] = useState({})
+  const [ selectedCompany, setSelectedCompany ] = useState('')
   const companies = data.keywordSearch
 
   const companyListings = companies.map(company => {
@@ -20,12 +20,15 @@ const SearchResults = ({ data }) => {
   return (
     <div className='all-results-container'>
       <div className='search-results-container'>
-      {companyListings}
+        {companyListings}
       </div>
-      {selectedCompany && <ExpandedResult 
-        selectedCompany={selectedCompany}
-        key={selectedCompany.id}
-      />}
+      <div className='expanded-result-container'>
+        {!selectedCompany && <h3>Select a company to learn more</h3>}
+        {selectedCompany && <ExpandedResult 
+          selectedCompany={selectedCompany}
+          key={selectedCompany.id}
+        />}
+      </div>
     </div>
   )
 }

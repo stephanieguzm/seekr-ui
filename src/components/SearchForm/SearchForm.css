@@ -1,5 +1,7 @@
 .search-form {
   margin: 1.5em;
+  margin: 0 auto;
+  text-align: center;
 }
 
 input[type=text] {
@@ -21,7 +23,7 @@ input[type=text]:focus {
 .search-form-button,
 .apply-button {
   width: 10vw;
-  height: 4vh;
+  height: 35px;
   margin: 1vh;
   color: white;
   cursor: pointer;

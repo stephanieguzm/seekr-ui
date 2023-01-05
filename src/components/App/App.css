@@ -4,7 +4,7 @@
 
 header {
   background-color: #ffff;
-  max-height: 80px;
+  max-height: 70px;
   min-height: 10vh;
   display: flex;
   flex-direction: row;
@@ -51,7 +51,7 @@ main {
 
 button {
   width: 10vw;
-  height: 4vh;
+  height: 35px;
   margin: 1vh 0;
   cursor: pointer;
   transition: all 0.2s;
@@ -65,4 +65,16 @@ button:hover {
   border: none;
   background-color: #812184;
   color: white;
+}
+
+.logo {
+  width: 70%;
+  height: auto;
+}
+
+h2 {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 14px;
 }

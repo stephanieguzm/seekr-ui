@@ -42,3 +42,14 @@ input[type=text]:focus {
 .search-return-p {
   margin: 5px 0;
 }
+
+.clear-search-button {
+  border: none;
+  background-color: #f6f5f5;
+}
+
+.clear-search-button:hover {
+  background-color: rgba(212, 208, 208, 0.2);
+  color: #812184;
+
+}

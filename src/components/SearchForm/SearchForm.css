@@ -18,7 +18,8 @@ input[type=text]:focus {
   border: 3px solid rgb(211, 101, 238);
 }
 
-.search-form-button {
+.search-form-button,
+.apply-button {
   width: 10vw;
   height: 4vh;
   margin: 1vh;
@@ -31,6 +32,7 @@ input[type=text]:focus {
   border-radius: 4px;
 }
 
-.search-form-button:hover {
+.search-form-button:hover,
+.apply-button:hover {
   background-color: #b009b3;
 }

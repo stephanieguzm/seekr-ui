@@ -40,7 +40,7 @@ const SearchForm = () => {
           data-cy='search-form-button' 
           onClick={(event) => handleSearch(event)}>SUBMIT</button>
       </form>
-      {!data && <h3>Your search returned no results. Please try again.</h3>}
+      {!data && error && <h3>Your search returned no results. Please try again.</h3>}
       {data && (
         <SearchResults data={data} />
       )}

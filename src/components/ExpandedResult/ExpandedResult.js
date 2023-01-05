@@ -4,8 +4,8 @@ const ExpandedResult = ({ selectedCompany }) => {
   return (
     <>
       <div className='exp-result-header'>
-        <h3>{selectedCompany.companyName}</h3>
-          <form target='_blank' rel='noreferrer'>
+        <h3 className='exp-result-fixed'>{selectedCompany.companyName}</h3>
+        <form target='_blank' rel='noreferrer'>
           <button className='apply-button' formAction={selectedCompany.hiringLink} >APPLY HERE</button>
         </form>
       </div>

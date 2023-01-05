@@ -2,6 +2,7 @@ import { useLazyQuery } from '@apollo/client'
 import { useState } from 'react'
 import { GET_SEARCH_RESULTS } from '../../queries'
 import SearchResults from '../SearchResults/SearchResults'
+import './SearchForm.css'
 
 const SearchForm = () => {
   const [ searchInput, setSearchInput ] = useState('')

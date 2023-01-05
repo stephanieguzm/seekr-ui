@@ -12,7 +12,7 @@ const Result = ({ company, setSelectedCompany }) => {
       <div className='details'>
         {company.rolesHiringFor && <p>Seeking: {company.rolesHiringFor}</p>}
         {company.locationsHiringIn && <p>Location(s): {company.locationsHiringIn}</p>}
-        <button onClick={() => expandResult()}>LEARN MORE</button>
+        <button className='learn-more-button' onClick={() => expandResult()}>LEARN MORE</button>
       </div>
     </div>
   )

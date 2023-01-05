@@ -25,6 +25,12 @@ const SearchForm = () => {
     setSelectedCompany('')
   }
 
+  const clearSearch = () => {
+    setSearchValue('')
+    setSearchInput('')
+    setSelectedCompany('')
+  }
+
   if (loading) return <p className="loading-message">Loading...</p>
   if (error) return <p className='error-message'>Oops! No results match your search terms. Try your search again.</p>
 
@@ -43,6 +49,10 @@ const SearchForm = () => {
           className='search-form-button' 
           data-cy='search-form-button' 
           onClick={(event) => handleSearch(event)}>SUBMIT</button>
+        <button 
+          className='clear-search-button' 
+          data-cy='clear-search-button' 
+          onClick={(event) => clearSearch(event)}>Clear Search</button>
         {data && <p className='search-return-p'>Your search "{searchValue}" returned {data.keywordSearch.length} result(s)</p>}
       </form>
       {data && 

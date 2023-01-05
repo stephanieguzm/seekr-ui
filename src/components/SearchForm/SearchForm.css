@@ -1,5 +1,7 @@
 .search-form {
   margin: 1.5em;
+  margin: 0 auto;
+  text-align: center;
 }
 
 input[type=text] {
@@ -18,9 +20,10 @@ input[type=text]:focus {
   border: 3px solid rgb(211, 101, 238);
 }
 
-.search-form-button {
+.search-form-button,
+.apply-button {
   width: 10vw;
-  height: 4vh;
+  height: 35px;
   margin: 1vh;
   color: white;
   cursor: pointer;
@@ -31,6 +34,22 @@ input[type=text]:focus {
   border-radius: 4px;
 }
 
-.search-form-button:hover {
+.search-form-button:hover,
+.apply-button:hover {
   background-color: #b009b3;
+}
+
+.search-return-p {
+  margin: 5px 0;
+}
+
+.clear-search-button {
+  border: none;
+  background-color: #f6f5f5;
+}
+
+.clear-search-button:hover {
+  background-color: rgba(212, 208, 208, 0.2);
+  color: #812184;
+
 }

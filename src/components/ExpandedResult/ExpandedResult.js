@@ -9,9 +9,9 @@ const ExpandedResult = ({ selectedCompany }) => {
           <button className='apply-button' formAction={selectedCompany.hiringLink} >APPLY HERE</button>
         </form>
       </div>
-      <p className=''>Location(s): {selectedCompany.locationsHiringIn}</p>
-      <p>Hiring for: {selectedCompany.rolesHiringFor}</p>
-      <p>Description: {selectedCompany.description}</p>
+      {selectedCompany.locationsHiringIn && <p className=''>Location(s): {selectedCompany.locationsHiringIn}</p>}
+      {selectedCompany.rolesHiringFor && <p>Hiring for: {selectedCompany.rolesHiringFor}</p>}
+      {selectedCompany.description && <p>Description: {selectedCompany.description}</p>}
       {selectedCompany.oneNiceThing && <p>One nice thing: {selectedCompany.oneNiceThing}</p>}
       {selectedCompany.comments && <p>Comments: {selectedCompany.comments}</p>}
     </>

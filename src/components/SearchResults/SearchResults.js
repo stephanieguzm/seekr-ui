@@ -1,7 +1,6 @@
 import Result from '../Result/Result'
 import ExpandedResult from '../ExpandedResult/ExpandedResult'
 import './SearchResults.css'
-import { useState } from 'react'
 
 const SearchResults = ({ data, selectedCompany, setSelectedCompany }) => {
 

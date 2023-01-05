@@ -38,3 +38,7 @@ input[type=text]:focus {
 .apply-button:hover {
   background-color: #b009b3;
 }
+
+.search-return-p {
+  margin: 5px 0;
+}

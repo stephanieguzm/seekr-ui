@@ -6,6 +6,8 @@ import './SearchForm.css'
 
 const SearchForm = () => {
   const [ searchInput, setSearchInput ] = useState('')
+  const [ searchValue, setSearchValue ] = useState('')
+  const [ selectedCompany, setSelectedCompany ] = useState('')
 
   const [ getSearchResults, {loading, data, error, refetch }] = useLazyQuery(GET_SEARCH_RESULTS)
 
@@ -18,7 +20,9 @@ const SearchForm = () => {
         variables: { keyword: searchInput}
       })
     }
+    setSearchValue(searchInput)
     setSearchInput('')
+    setSelectedCompany('')
   }
 
   if (loading) return <p className="loading-message">Loading...</p>
@@ -39,11 +43,15 @@ const SearchForm = () => {
           className='search-form-button' 
           data-cy='search-form-button' 
           onClick={(event) => handleSearch(event)}>SUBMIT</button>
+        {data && <p className='search-return-p'>Your search "{searchValue}" returned {data.keywordSearch.length} result(s)</p>}
       </form>
-      {!data && error && <h3>Your search returned no results. Please try again.</h3>}
-      {data && (
-        <SearchResults data={data} />
-      )}
+      {data && 
+        <SearchResults 
+          data={data} 
+          selectedCompany={selectedCompany}
+          setSelectedCompany={setSelectedCompany}
+        />
+      }
     </div>
   )
 }

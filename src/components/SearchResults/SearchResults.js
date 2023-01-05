@@ -3,9 +3,8 @@ import ExpandedResult from '../ExpandedResult/ExpandedResult'
 import './SearchResults.css'
 import { useState } from 'react'
 
-const SearchResults = ({ data }) => {
+const SearchResults = ({ data, selectedCompany, setSelectedCompany }) => {
 
-  const [ selectedCompany, setSelectedCompany ] = useState('')
   const companies = data.keywordSearch
 
   const companyListings = companies.map(company => {

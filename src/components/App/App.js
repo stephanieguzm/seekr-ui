@@ -1,6 +1,5 @@
 import Dashboard from '../Dashboard/Dashboard'
 import { NavLink, Switch, Route } from 'react-router-dom'
-import { useQuery, gql } from '@apollo/client'
 import './App.css'
 import logo from '../../logo.svg'
 
@@ -26,7 +25,7 @@ const App = () => {
       </Switch>
       </main>
       <footer className='footer-container' data-cy='footer-container'>
-        <p className='footer-text' data-cy='footer-text'>Made by <a href='https://github.com/stephanieguzm/seekr-ui' target='_blank' rel='noreferrer'>Stephanie Guzman</a> and <a href='https://github.com/ajkrumholz/seekr' target='_blank' rel='noreferrer'>A.J. Krumholz </a></p>
+        <p className='footer-text' data-cy='footer-text'>&#169; <a href='https://github.com/ajkrumholz/seekr' target='_blank' rel='noreferrer'>A.J. Krumholz</a> & <a href='https://github.com/stephanieguzm/seekr-ui' target='_blank' rel='noreferrer'>Stephanie Guzman</a></p>
       </footer>
     </div>
   );

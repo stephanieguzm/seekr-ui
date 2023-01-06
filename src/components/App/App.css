@@ -4,23 +4,37 @@ main {
   padding-bottom: 40px;
 }
 
-footer {
+header {
+  background-color: #ffff;
+  max-height: 70px;
   display: flex;
   flex-direction: row;
-  box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0px -2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+  font-size: calc(8px + 2vmin);
+  padding: 8px 20px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+  clip-path: inset(0px 0px -8px -8px);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+footer {
+  background-color: #f6f5f5;
+  font-size: 12px;
+  box-sizing: border-box;
+  margin: 20px 0 0;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  max-height: 100px;
-  padding: 0px 25px 0px 25px;
   text-align: center;
-  color: rgb(42, 41, 41);
-  background-color: #ffff;
-  font-size: small;
+  color: rgb(42, 41, 41)
 }
 
 footer a:link {
@@ -68,8 +82,4 @@ p {
 
 .logo {
   width: 100%;
-}
-
-.footer-text {
-  margin-right: calc(10vw - 10px);
 }

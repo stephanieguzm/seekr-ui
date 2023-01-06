@@ -9,7 +9,7 @@ const SearchForm = () => {
   const [ searchValue, setSearchValue ] = useState('')
   const [ selectedCompany, setSelectedCompany ] = useState('')
 
-  const [ getSearchResults, {loading, data, error, refetch }] = useLazyQuery(GET_SEARCH_RESULTS)
+  const [ getSearchResults, {loading, data, error }] = useLazyQuery(GET_SEARCH_RESULTS)
 
   const handleSearch = (event) => {
     event.preventDefault()

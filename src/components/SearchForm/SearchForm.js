@@ -8,21 +8,28 @@ const SearchForm = () => {
   const [ searchInput, setSearchInput ] = useState('')
   const [ searchValue, setSearchValue ] = useState('')
   const [ selectedCompany, setSelectedCompany ] = useState('')
+  const [ emptySearch, setEmptySearch ] = useState(false)
 
   const [ getSearchResults, {loading, data, error }] = useLazyQuery(GET_SEARCH_RESULTS)
 
   const handleSearch = (event) => {
     event.preventDefault()
     if (!searchInput) {
-      return <p className='empty-search-message' data-cy='empty-search-message'>Please enter in a search term</p>
+      setEmptySearch(prevState => !prevState)
     } else {
       getSearchResults({
         variables: { keyword: searchInput}
       })
     }
     setSearchValue(searchInput)
-    setSearchInput('')
+    resetSearch()
+  }
+
+  const resetSearch = () => {
+    emptySearch && setEmptySearch(prevState => !prevState)
     setSelectedCompany('')
+    setSearchInput('')
+    window.blur()
   }
 
   if (loading) return <p className="loading-message">Loading...</p>
@@ -43,7 +50,8 @@ const SearchForm = () => {
           className='search-form-button' 
           data-cy='search-form-button' 
           onClick={(event) => handleSearch(event)}>SUBMIT</button>
-        {data && <p className='search-return-p'>Your search "{searchValue}" returned {data.keywordSearch.length} result(s)</p>}
+        {emptySearch && <p className='search-return-p' style={{color: "red"}}>Please enter a search term.</p>}
+        {data && !emptySearch && <p className='search-return-p'>Your search "{searchValue}" returned {data.keywordSearch.length} result(s).</p>}
       </form>
       {data && 
         <SearchResults 

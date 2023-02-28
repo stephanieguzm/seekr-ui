@@ -1,5 +1,5 @@
 import { useLazyQuery } from '@apollo/client'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { GET_SEARCH_RESULTS } from '../../queries'
 import SearchResults from '../SearchResults/SearchResults'
 import './SearchForm.css'
@@ -9,6 +9,14 @@ const SearchForm = () => {
   const [ searchValue, setSearchValue ] = useState('')
   const [ selectedCompany, setSelectedCompany ] = useState('')
   const [ emptySearch, setEmptySearch ] = useState(false)
+  const ref = useRef()
+  const [ hasFocus, setFocus ] = useState(false)
+
+   useEffect(() => {
+    if (document.hasFocus() && ref.current.contains(document.activeElement)) {
+      setFocus(true);
+    }
+  }, []);
 
   const [ getSearchResults, {loading, data, error }] = useLazyQuery(GET_SEARCH_RESULTS)
 
@@ -44,6 +52,9 @@ const SearchForm = () => {
           placeholder='Search'
           data-cy='search-form-input'
           value={searchInput}
+          ref={ref}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
           onChange={(event) => setSearchInput(event.target.value)}
         />
         <button 

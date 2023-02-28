@@ -5,12 +5,11 @@ import './SearchResults.css'
 const SearchResults = ({ data, selectedCompany, setSelectedCompany }) => {
 
   const companies = data.keywordSearch
-
+  
   const companyListings = companies.map(company => {
     return <Result
       company={company}
       setSelectedCompany={setSelectedCompany}
-      id={company.id}
       key={company.id}
     />
   })

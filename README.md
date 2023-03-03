@@ -5,7 +5,7 @@
 ### [Deployed Project](https://seekr-wine.vercel.app/)
 
 ## Overview
-Seekr is a web application that allows users to search for, view, and be directed to apply tp software engineering openings.<br>
+Seekr is a web application that allows users to search for, view, and be directed to apply to software engineering openings.<br>
 The application consumes the [Seekr GraphQL API](https://github.com/ajkrumholz/seekr). 
 
 ### Learning Goals:      
